@@ -1,4 +1,16 @@
 import matplotlib.pyplot as plt
+import sqlite3
+
+connection = sqlite3.connect(r'climate.db')
+cursor = connection.cursor()
+
+cursor.execute("SELECT * FROM ClimateData")
+print("fetchall:")
+result = cursor.fetchall()
+
+for r in result:
+    print(r)
+
         
 years = []
 co2 = []
